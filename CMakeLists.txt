@@ -10,3 +10,4 @@ pico_sdk_init()
 add_compile_options(-Wall)
 
 add_subdirectory(blink_builtin)
+add_subdirectory(blink_pin)
