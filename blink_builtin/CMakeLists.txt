@@ -1,0 +1,8 @@
+add_executable(blink_builtin blink_builtin.c)
+
+pico_enable_stdio_usb(blink_builtin 1)
+pico_enable_stdio_uart(blink_builtin 1)
+
+pico_add_extra_outputs(blink_builtin)
+
+target_link_libraries(blink_builtin pico_stdlib pico_cyw43_arch_none)
