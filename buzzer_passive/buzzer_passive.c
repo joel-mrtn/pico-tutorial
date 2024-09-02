@@ -36,8 +36,8 @@ void set_freq(uint pin, int freq, int times, float volume) {
     if (freq == 0) {
         gpio_put(pin, false);
     } else {
-        const int on_time = (int)(1000000.0 / freq / 2 * volume);
-        const int off_time = (int)(1000000.0 / freq / 2 * (1.0f - volume));
+        const int on_time = (int)(1000000.0 / freq * volume);
+        const int off_time = (int)(1000000.0 / freq * (1.0f - volume));
 
         for (int i = 0; i < times * freq / 1000; i++) {
             gpio_put(pin, true);
