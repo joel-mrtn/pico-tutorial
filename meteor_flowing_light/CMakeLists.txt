@@ -1,0 +1,5 @@
+add_executable(meteor_flowing_light meteor_flowing_light.c)
+
+pico_add_extra_outputs(meteor_flowing_light)
+
+target_link_libraries(meteor_flowing_light pico_stdlib hardware_pwm)
