@@ -1,0 +1,8 @@
+add_executable(serial_communication serial_communication.c)
+
+pico_enable_stdio_usb(serial_communication 1)
+pico_enable_stdio_uart(serial_communication 1)
+
+pico_add_extra_outputs(serial_communication)
+
+target_link_libraries(serial_communication pico_stdlib)
