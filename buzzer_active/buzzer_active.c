@@ -1,5 +1,4 @@
 #include "pico/stdlib.h"
-#include <stdio.h>
 
 #define PIN_BUZZER 15
 #define PIN_BUTTON 16
