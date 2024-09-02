@@ -19,6 +19,7 @@ int main(void) {
     while (true) {
         if (gpio_get(PIN_BUTTON) == false) {
             for (int x = 0; x < 360; x += 10) {
+                // Oscillate between 1500 Hz and 2500 Hz
                 const double sin_val = sin(x * (M_PI / 180.0));
                 const int tone_val = (int)(2000 + sin_val * 500);
 
