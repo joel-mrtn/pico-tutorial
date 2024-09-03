@@ -15,11 +15,13 @@ in its own directory, with a CMakeLists.txt file for building with the Pico SDK.
 
 - Ensure that you have set the PICO_SDK_PATH environment variable. This variable should point to the location of the
   Pico SDK on your system.
+
   ```shell
   export PICO_SDK_PATH=/path/to/your/pico-sdk
   ```
 - If you are using a Raspberry Pi Pico W (wireless version), you need to specify this when running CMake. Add the
   following option to your CMake command.
+
   ```shell
   cmake -DPICO_BOARD=pico_w
   ```
