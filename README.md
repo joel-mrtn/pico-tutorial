@@ -25,3 +25,21 @@ in its own directory, with a `CMakeLists.txt` file for building with the Pico SD
   ```shell
   cmake -DPICO_BOARD=pico_w
   ```
+
+## Project list
+
+1. [Blink (builtin)](https://github.com/joel-mrtn/pico-tutorial/tree/main/projects/blink_builtin)
+2. [Blink (pin)](https://github.com/joel-mrtn/pico-tutorial/tree/main/projects/blink_pin)
+3. [Button LED](https://github.com/joel-mrtn/pico-tutorial/tree/main/projects/button_led)
+4. [Flowing light](https://github.com/joel-mrtn/pico-tutorial/tree/main/projects/flowing_light)
+5. [PWM LED](https://github.com/joel-mrtn/pico-tutorial/tree/main/projects/pwm_led)
+6. [Flowing meteor light](https://github.com/joel-mrtn/pico-tutorial/tree/main/projects/flowing_meteor_light)
+7. [RGB LED](https://github.com/joel-mrtn/pico-tutorial/tree/main/projects/rgb_led)
+8. [RGB gradient LED](https://github.com/joel-mrtn/pico-tutorial/tree/main/projects/rgb_gradient_led)
+9. [WS2812 (NeoPixel)](https://github.com/joel-mrtn/pico-tutorial/tree/main/projects/ws2812)
+10. [Doorbell (active buzzer)](https://github.com/joel-mrtn/pico-tutorial/tree/main/projects/buzzer_active)
+11. [Alarm (passive buzzer)](https://github.com/joel-mrtn/pico-tutorial/tree/main/projects/buzzer_passive)
+12. [Serial communication](https://github.com/joel-mrtn/pico-tutorial/tree/main/projects/serial_communication)
+13. [Potentiometer voltage](https://github.com/joel-mrtn/pico-tutorial/tree/main/projects/potentiometer_voltage)
+14. [Potentiometer LED](https://github.com/joel-mrtn/pico-tutorial/tree/main/projects/potentiometer_led)
+15. [Potentiometer RGB](https://github.com/joel-mrtn/pico-tutorial/tree/main/projects/potentiometer_rgb)
