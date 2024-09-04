@@ -5,7 +5,7 @@ are based on
 the [Freenove Ultimate Starter Kit for Raspberry Pi Pico](https://github.com/Freenove/Freenove_Ultimate_Starter_Kit_for_Raspberry_Pi_Pico),
 but have been adapted to use the official
 [Raspberry Pi Pico SDK](https://github.com/raspberrypi/pico-sdk) instead of the Arduino IDE. Each project is contained
-in its own directory, with a CMakeLists.txt file for building with the Pico SDK.
+in its own directory, with a `CMakeLists.txt` file for building with the Pico SDK.
 
 > [!NOTE]
 > Please note that some projects have been implemented with modifications or additional features and do not exactly
@@ -13,7 +13,7 @@ in its own directory, with a CMakeLists.txt file for building with the Pico SDK.
 
 ## Setup requirements
 
-- Ensure that you have set the PICO_SDK_PATH environment variable. This variable should point to the location of the
+- Ensure that you have set the `PICO_SDK_PATH` environment variable. This variable should point to the location of the
   Pico SDK on your system.
 
   ```shell
