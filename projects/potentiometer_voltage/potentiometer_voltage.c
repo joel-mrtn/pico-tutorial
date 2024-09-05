@@ -1,14 +1,13 @@
 #include "hardware/adc.h"
 #include "pico/stdlib.h"
-
 #include <stdio.h>
 
 #define PIN_ANALOG_IN 26
 
 int main(void) {
     stdio_init_all();
-    adc_init();
 
+    adc_init();
     adc_gpio_init(PIN_ANALOG_IN);
     adc_select_input(0);
 

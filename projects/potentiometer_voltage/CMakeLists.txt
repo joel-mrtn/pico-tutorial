@@ -1,7 +1,7 @@
 add_executable(potentiometer_voltage potentiometer_voltage.c)
 
+target_link_libraries(potentiometer_voltage pico_stdlib hardware_adc)
+
 pico_enable_stdio_usb(potentiometer_voltage 1)
 
 pico_add_extra_outputs(potentiometer_voltage)
-
-target_link_libraries(potentiometer_voltage pico_stdlib hardware_adc)
