@@ -1,6 +1,6 @@
+#include "hardware/pwm.h"
 #include "pico/stdlib.h"
-#include <hardware/pwm.h>
-#include <sys/types.h>
+#include "sys/types.h"
 
 #define DELAY 100
 
@@ -47,8 +47,8 @@ int main(void) {
 
         for (int i = 0; i < duties_count - led_count; i++) {
             for (int j = 0; j < led_count; j++) {
-                pwm_set_chan_level(leds[j].slice_num, leds[j].chan,
-                                   duties[i + j]);
+                pwm_set_chan_level(leds[led_count - j - 1].slice_num,
+                                   leds[led_count - j - 1].chan, duties[i + j]);
             }
             sleep_ms(DELAY);
         }
