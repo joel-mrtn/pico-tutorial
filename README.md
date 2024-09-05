@@ -44,3 +44,4 @@ in its own directory, with a `CMakeLists.txt` file for building with the Pico SD
 14. [Potentiometer LED](https://github.com/joel-mrtn/pico-tutorial/tree/main/projects/potentiometer_led)
 15. [Potentiometer RGB](https://github.com/joel-mrtn/pico-tutorial/tree/main/projects/potentiometer_rgb)
 16. [Potentiometer rainbow](https://github.com/joel-mrtn/pico-tutorial/tree/main/projects/potentiometer_rainbow)
+17. [Photoresistor LED](https://github.com/joel-mrtn/pico-tutorial/tree/main/projects/photoresistor_led)
