@@ -5,10 +5,10 @@
 #define DELAY 5
 
 int main() {
+    gpio_set_function(PIN_LED, GPIO_FUNC_PWM);
+
     const uint slice_num = pwm_gpio_to_slice_num(PIN_LED);
     const uint chan = pwm_gpio_to_channel(PIN_LED);
-
-    gpio_set_function(PIN_LED, GPIO_FUNC_PWM);
 
     pwm_set_wrap(slice_num, 255);
     pwm_set_enabled(slice_num, true);
