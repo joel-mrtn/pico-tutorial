@@ -6,8 +6,9 @@
 
 int main(void) {
     gpio_init(PIN_LED);
-    gpio_init(PIN_BUTTON);
     gpio_set_dir(PIN_LED, GPIO_OUT);
+
+    gpio_init(PIN_BUTTON);
     gpio_set_dir(PIN_BUTTON, GPIO_IN);
 
     bool led_state = false;
