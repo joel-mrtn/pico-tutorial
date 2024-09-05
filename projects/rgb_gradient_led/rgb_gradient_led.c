@@ -1,6 +1,5 @@
 #include "hardware/pwm.h"
 #include "pico/stdlib.h"
-
 #include <time.h>
 
 #define DELAY 100
@@ -12,27 +11,9 @@ typedef struct {
     uint chan;
 } led;
 
-long gradient_wheel(const int pos) {
-    long wheel_pos = pos % 0xff;
-    long rgb;
+long gradient_wheel(int pos);
 
-    if (wheel_pos < 85) {
-        // Decrease red, increase green
-        rgb = (255 - wheel_pos * 3) << 16 | wheel_pos * 3 << 8;
-    } else if (wheel_pos < 170) {
-        // Decrease green, increase blue
-        wheel_pos -= 85;
-        rgb = (255 - wheel_pos * 3) << 8 | wheel_pos * 3;
-    } else {
-        // Decrease blue, increase red
-        wheel_pos -= 170;
-        rgb = (wheel_pos * 3) << 16 | (255 - wheel_pos * 3);
-    }
-
-    return rgb;
-}
-
-int main() {
+int main(void) {
     const led leds[] = {
         {13, pwm_gpio_to_slice_num(13), pwm_gpio_to_channel(13)},
         {12, pwm_gpio_to_slice_num(12), pwm_gpio_to_channel(12)},
@@ -65,4 +46,24 @@ int main() {
             sleep_ms(DELAY);
         }
     }
+}
+
+long gradient_wheel(int pos) {
+    long wheel_pos = pos % 0xff;
+    long rgb;
+
+    if (wheel_pos < 85) {
+        // Decrease red, increase green
+        rgb = (255 - wheel_pos * 3) << 16 | wheel_pos * 3 << 8;
+    } else if (wheel_pos < 170) {
+        // Decrease green, increase blue
+        wheel_pos -= 85;
+        rgb = (255 - wheel_pos * 3) << 8 | wheel_pos * 3;
+    } else {
+        // Decrease blue, increase red
+        wheel_pos -= 170;
+        rgb = (wheel_pos * 3) << 16 | (255 - wheel_pos * 3);
+    }
+
+    return rgb;
 }
