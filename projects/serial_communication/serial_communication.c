@@ -1,6 +1,5 @@
 #include "pico/stdlib.h"
 #include <stdio.h>
-#include <string.h>
 
 #define BUFFER_SIZE 128
 
@@ -10,9 +9,9 @@ int main(void) {
     stdio_init_all();
 
     sleep_ms(2000);
-    flush_input_buffer();
-
     printf("Type something and press enter:\n");
+
+    flush_input_buffer();
 
     while (true) {
         char input[BUFFER_SIZE] = {0};
@@ -24,7 +23,6 @@ int main(void) {
 
 void flush_input_buffer(void) {
     // Read and discard all characters until the buffer is empty
-    while (stdio_getchar_timeout_us(0) != PICO_ERROR_TIMEOUT) {
-        // Do nothing, just discard the character
-    }
+    while (stdio_getchar_timeout_us(0) != PICO_ERROR_TIMEOUT)
+        ; // Do nothing, just discard the character
 }
