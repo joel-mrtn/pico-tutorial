@@ -1,5 +1,5 @@
 add_executable(potentiometer_rgb potentiometer_rgb.c)
 
-pico_add_extra_outputs(potentiometer_rgb)
-
 target_link_libraries(potentiometer_rgb pico_stdlib hardware_pwm hardware_adc)
+
+pico_add_extra_outputs(potentiometer_rgb)

@@ -5,7 +5,7 @@
 #define ADC_THRESHOLD 4000
 #define LED_COUNT 3
 
-typedef struct Led {
+typedef struct {
     uint pin;
     uint slice_num;
     uint chan;
