@@ -13,40 +13,8 @@ typedef struct {
 } rgb_color;
 
 void set_pixels(PIO pio, uint sm, rgb_color color_buf[], uint num_pixels,
-                uint brightness) {
-    for (int i = 0; i < num_pixels; i++) {
-        const uint pixel = color_buf[i].g * brightness / 255 << 16 |
-                           color_buf[i].r * brightness / 255 << 8 |
-                           color_buf[i].b * brightness / 255;
-        pio_sm_put_blocking(pio, sm, pixel << 8u);
-    }
-}
-
-rgb_color gradient_wheel(const int pos) {
-    rgb_color color;
-    long wheel_pos = pos % 255;
-
-    if (wheel_pos < 85) {
-        // Decrease red, increase green
-        color.r = 255 - wheel_pos * 3;
-        color.g = wheel_pos * 3;
-        color.b = 0;
-    } else if (wheel_pos < 170) {
-        // Decrease green, increase blue
-        wheel_pos -= 85;
-        color.r = 0;
-        color.g = 255 - wheel_pos * 3;
-        color.b = wheel_pos * 3;
-    } else {
-        // Decrease blue, increase red
-        wheel_pos -= 170;
-        color.r = wheel_pos * 3;
-        color.g = 0;
-        color.b = 255 - wheel_pos * 3;
-    }
-
-    return color;
-}
+                uint brightness);
+rgb_color gradient_wheel(int pos);
 
 int main(void) {
     auto pio = pio0;
@@ -86,4 +54,40 @@ int main(void) {
             sleep_ms(10);
         }
     }
+}
+
+void set_pixels(PIO pio, uint sm, rgb_color color_buf[], uint num_pixels,
+                uint brightness) {
+    for (int i = 0; i < num_pixels; i++) {
+        const uint pixel = color_buf[i].g * brightness / 255 << 16 |
+                           color_buf[i].r * brightness / 255 << 8 |
+                           color_buf[i].b * brightness / 255;
+        pio_sm_put_blocking(pio, sm, pixel << 8u);
+    }
+}
+
+rgb_color gradient_wheel(int pos) {
+    rgb_color color;
+    long wheel_pos = pos % 255;
+
+    if (wheel_pos < 85) {
+        // Decrease red, increase green
+        color.r = 255 - wheel_pos * 3;
+        color.g = wheel_pos * 3;
+        color.b = 0;
+    } else if (wheel_pos < 170) {
+        // Decrease green, increase blue
+        wheel_pos -= 85;
+        color.r = 0;
+        color.g = 255 - wheel_pos * 3;
+        color.b = wheel_pos * 3;
+    } else {
+        // Decrease blue, increase red
+        wheel_pos -= 170;
+        color.r = wheel_pos * 3;
+        color.g = 0;
+        color.b = 255 - wheel_pos * 3;
+    }
+
+    return color;
 }
