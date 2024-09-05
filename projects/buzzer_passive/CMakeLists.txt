@@ -1,5 +1,5 @@
 add_executable(buzzer_passive buzzer_passive.c)
 
-pico_add_extra_outputs(buzzer_passive)
-
 target_link_libraries(buzzer_passive pico_stdlib)
+
+pico_add_extra_outputs(buzzer_passive)

@@ -41,9 +41,9 @@ void set_freq(uint pin, int freq, int times, float volume) {
 
         for (int i = 0; i < times * freq / 1000; i++) {
             gpio_put(pin, true);
-            sleep_us(on_time); // Delay for half period
+            sleep_us(on_time);
             gpio_put(pin, false);
-            sleep_us(off_time); // Delay for half period
+            sleep_us(off_time);
         }
     }
 }
