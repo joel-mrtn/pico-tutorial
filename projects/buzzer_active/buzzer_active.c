@@ -4,12 +4,11 @@
 #define PIN_BUTTON 16
 
 int main(void) {
-    gpio_init(PIN_BUZZER);
     gpio_init(PIN_BUTTON);
-
-    gpio_set_dir(PIN_BUZZER, GPIO_OUT);
     gpio_set_dir(PIN_BUTTON, GPIO_IN);
 
+    gpio_init(PIN_BUZZER);
+    gpio_set_dir(PIN_BUZZER, GPIO_OUT);
     gpio_put(PIN_BUZZER, false);
 
     while (true) {
