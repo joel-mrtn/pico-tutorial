@@ -1,3 +1,3 @@
 # Potentiometer RGB
 
-![Breadboard](/assets/potentiometer-rgb.png)
+![Breadboard](/assets/potentiometer_rgb_bb.png)
