@@ -1,0 +1,5 @@
+add_executable(photoresistor_led photoresistor_led.c)
+
+target_link_libraries(photoresistor_led pico_stdlib hardware_pwm hardware_adc)
+
+pico_add_extra_outputs(photoresistor_led)
