@@ -1,0 +1,7 @@
+add_executable(thermistor_temp thermistor_temp.c)
+
+target_link_libraries(thermistor_temp pico_stdlib hardware_adc)
+
+pico_enable_stdio_usb(thermistor_temp 1)
+
+pico_add_extra_outputs(thermistor_temp)
