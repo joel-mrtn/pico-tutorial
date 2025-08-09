@@ -2,7 +2,7 @@
 #include <stdio.h>
 
 #define PIN_LED 15
-#define LED_DELAY_MS 500
+#define LED_DELAY_MS 1000
 
 int main(void) {
     gpio_init(PIN_LED);
